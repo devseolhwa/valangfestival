@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAL랭 페스티벌</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://lolstatic-a.akamaihd.net/webfonts/live/css/valorant/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lenis.js"></script>
+    <script src="assets/js/lib/gsap.min.js"></script>
+    <script src="assets/js/lib/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/skrollr.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+</head>
+<body>
+    
+    <!-- 라이엇바 상단 -->
+    <header id="riotbar-header"></header>
+    <header id="top-menu"></header>
+
+    <div class="wrap">
+        <a href="#" class="pageBack">
+            <img src="assets/images/icon_back.svg" alt="이벤트 페이지 바로 가기">이벤트 바로 가기
+        </a>
+        <div class="historyWrap">
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">당첨 내역</h2>
+            </div>
+            <p class="noneHistory">보상 내역이 없습니다</p>
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">획득 내역</h2>
+            </div>
+            <div class="textActiveHidden historyText">
+                <p class="textActive">7월 nn일 까지의 획득 내역</p>
+            </div>
+            <ul class="getHistory">
+                <li>
+                    <p class="title">포인트</p>
+                    <p class="get">0 P</p>
+                </li>
+                <li>
+                    <p class="title">응모권</p>
+                    <p class="get">0장</p>
+                </li>
+            </ul><!-- getHistory END -->
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">사용 내역</h2>
+            </div>
+            <div class="useHistory">
+                <p class="noneHistory">사용 내역이 없습니다</p>
+            </div><!-- useHistory END -->
+        </div><!-- historyWrap END -->
+    </div><!-- wrap END -->
+
+    <!-- 라이엇바 하단 -->
+    <footer id="riotbar-footer"></footer>
+    <script>
+        let lenis;
+
+        $(function () {
+            setTimeout(() => {
+                lenis = new Lenis();
+
+                const raf = (time) => {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                };
+
+                requestAnimationFrame(raf);
+            }, 700);
+            setTimeout(() => {
+                textActive();
+
+                function textActive(){
+                    $(".textActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+            }, 600);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAL랭 페스티벌</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://lolstatic-a.akamaihd.net/webfonts/live/css/valorant/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lenis.js"></script>
+    <script src="assets/js/lib/gsap.min.js"></script>
+    <script src="assets/js/lib/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/skrollr.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+</head>
+<body>
+    
+    <!-- 라이엇바 상단 -->
+    <header id="riotbar-header"></header>
+    <header id="top-menu"></header>
+
+    <div class="wrap">
+        <a href="#" class="pageBack">
+            <img src="assets/images/icon_back.svg" alt="이벤트 페이지 바로 가기">이벤트 바로 가기
+        </a>
+        <div class="historyWrap">
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">당첨 내역</h2>
+            </div>
+            <div class="prizeHistory">
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item01.png" alt="벤큐 ZOWIE XL2546X 게이밍 모니터"></div>
+                    <p class="name">벤큐 ZOWIE XL2546X 게이밍 모니터</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item02.png" alt="아이패드 에어 11"></div>
+                    <p class="name">아이패드 에어 11</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item03.png" alt="Apex Pro Mini US 게이밍 키보드"></div>
+                    <p class="name">Apex Pro Mini US 게이밍 키보드</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item04.png" alt="[맘스터치] 간장마늘떡강정R"></div>
+                    <p class="name">[맘스터치] 간장마늘떡강정R</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item05.png" alt="[버거킹] 바삭킹 4조각"></div>
+                    <p class="name">[버거킹] 바삭킹 4조각</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item06.png" alt="컬쳐랜드 문화상품권 5천원"></div>
+                    <p class="name">컬쳐랜드 문화상품권 5천원</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item07.png" alt="레디어나이트 포인트 10개"></div>
+                    <p class="name">레디어나이트 포인트 10개</p>
+                </div>
+                <div class="item">
+                    <p class="date">2025. 3. 20</p>
+                    <div class="img"><img src="assets/images/img_history_item08.png" alt="[GS25] 칸쵸컵"></div>
+                    <p class="name">[GS25] 칸쵸컵</p>
+                    <button type="button" class="btnDelivery">배송지 입력</button>
+                </div>
+            </div><!-- prizeHistory END -->
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">획득 내역</h2>
+            </div>
+            <div class="textActiveHidden historyText">
+                <p class="textActive">7월 nn일 까지의 획득 내역</p>
+            </div>
+            <ul class="getHistory">
+                <li>
+                    <p class="title">포인트</p>
+                    <p class="get">99,999+ P</p>
+                </li>
+                <li>
+                    <p class="title">응모권</p>
+                    <p class="get">6장</p>
+                </li>
+            </ul><!-- getHistory END -->
+            <div class="textActiveHidden historyTitle">
+                <h2 class="textActive">사용 내역</h2>
+            </div>
+            <div class="useHistory">
+                <table>
+                    <caption>사용 내역 안내</caption>
+                    <colgroup>
+                        <col style="width: 22%">
+                        <col style="width: 22%">
+                        <col style="width: 31%">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">날짜</th>
+                            <th scope="col">구분</th>
+                            <th scope="col">보상</th>
+                            <th scope="col">사용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">아이패드 에어 11</td>
+                            <td class="value">2,000P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">[버거킹] 와퍼 주니어</td>
+                            <td class="value">200P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">아이패드 에어 11</td>
+                            <td class="value">응모권</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">특별 굿즈 교환</td>
+                            <td class="name">제트 한정판 바람막이</td>
+                            <td class="value">3,000P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">특별 굿즈 교환</td>
+                            <td class="name">발로란트 특별 굿즈</td>
+                            <td class="value">3,000P</td>
+                        </tr>
+                         <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">아이패드 에어 11</td>
+                            <td class="value">2,000P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">[버거킹] 와퍼 주니어</td>
+                            <td class="value">200P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">[버거킹] 와퍼 주니어</td>
+                            <td class="value">200P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">[버거킹] 와퍼 주니어</td>
+                            <td class="value">200P</td>
+                        </tr>
+                        <tr>
+                            <td class="date">2025. 3. 20</td>
+                            <td class="sort">디지털 기어 추첨</td>
+                            <td class="name">아이패드 에어 11</td>
+                            <td class="value">응모권</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- useHistory END -->
+            <div class="paging">
+                <!-- 
+                    [전달사항] 
+                    이전 또는 다음페이지가 없다면 .disabled 추가해주세요.
+                    클래스에 따라 디자인이 변경됩니다.
+                -->
+                <a href="#page_prev" id="page_prev" class="disabled">이전</a>
+                <strong title="현재 1페이지">1</strong>
+                <a href="#" title="2페이지 이동">2</a>
+                <a href="#" title="3페이지 이동">3</a>
+                <a href="#" title="3페이지 이동">4</a>
+                <a href="#" title="3페이지 이동">5</a>
+                <a href="#page_next" id="page_next">다음</a>
+            </div>
+        </div><!-- historyWrap END -->
+    </div><!-- wrap END -->
+
+    <!-- 라이엇바 하단 -->
+    <footer id="riotbar-footer"></footer>
+
+     <script>
+        let lenis;
+
+        $(function () {
+            setTimeout(() => {
+                lenis = new Lenis();
+
+                const raf = (time) => {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                };
+
+                requestAnimationFrame(raf);
+            }, 700);
+            setTimeout(() => {
+                textActive();
+
+                function textActive(){
+                    $(".textActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+            }, 600);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAL랭 페스티벌</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://lolstatic-a.akamaihd.net/webfonts/live/css/valorant/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lib/gsap.min.js"></script>
+    <script src="assets/js/lib/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/skrollr.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.4.2/pixi.min.js"></script><!-- wave -->
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+</head>
+<body>
+
+    <!-- 라이엇바 상단 -->
+    <header id="riotbar-header"></header>
+    <header id="top-menu"></header>
+
+    <div class="wrap">
+
+        <div class="popupSample">
+            <button onclick="location.href='case01.html'">로그인 전</button>
+            <button onclick="location.href='case02.html'">로그인 후(달성X)</button>
+            <button onclick="location.href='case03.html'">로그인 후(달성O)</button>
+            <button onclick="location.href='popup_sample.html'">popup_sample</button>
+            <button onclick="location.href='mypageHistory.html'">마이페이지 내역 O</button>
+            <button onclick="location.href='mypageHistory_none.html'">마이페이지 내역 X</button>
+            <button onclick="location.href='error.html'">error</button>
+            <button onclick="location.href='wait.html'">wait</button>
+            <button onclick="location.href='wait.html'">wait</button>
+            <button type="button" onclick="modalOpen('#modal-top50');">TOP 50 후보 등록 ></button>
+        </div>
+        
+    </div><!-- wrap end -->
+
+    <!-- 라이엇바 하단 -->
+    <footer id="riotbar-footer"></footer>
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+    
+    <!-- 이벤트 랭킹 TOP 50 영역 START -->
+    <div class="modalPopup top50Wrap" id="modal-top50">
+        <div class="inner">
+            <div class="textActiveHidden">
+                <h3 class="effectUp">이벤트 랭킹 <br class="show-768" /><span>TOP 50</span> <em>달성!</em></h3>
+            </div>
+            <div class="textActiveHidden">
+                <strong>8월 20일까지 TOP 50 유지하면 <br class="show-768" />상패 증정!</strong>
+            </div>
+            <div class="textActiveHidden">
+                <div class="img"><img src="assets/images/img_top50_plaque.png" alt=""></div>
+            </div>
+            <div class="textActiveHidden">
+                <p>
+                    아래 버튼을 통해 개인 정보를 입력해 주세요.<br />
+                    최종 선정 시 별도의 연락을 드려요.
+                </p>
+            </div>
+            <div class="textActiveHidden">
+                <button type="button" class="btnTop50Enter">TOP 50 후보 등록</button>
+            </div>
+        </div>
+        <a href="#none" class="btnTop50Close" onclick="modalClose('#modal-top50');">닫기</a>
+    </div>
+    <!-- 이벤트 랭킹 TOP 50 영역 END -->
+
+    <script>
+        // 팝업열기
+        function modalOpen(obj) {
+            var $modal = $(obj);
+
+            $(".modalPopup.show").each(function () {
+                modalClose($(this));
+            });
+
+            $("body").addClass("scrollNo");
+            $modal.fadeIn("fast").addClass("show");
+            initSliderInModal($modal);
+
+            if (lenis) lenis.stop();
+
+            let $slider = $modal.find(".prizeSlider.slick-initialized");
+            if ($slider.length) {
+                $slider.each(function () {
+                    $(this).slick("setPosition");
+                    $(this).slick("slickGoTo", 0, true);
+                    $(this).slick("slickPlay");
+                });
+            }
+        }
+
+        // 팝업닫기
+        function modalClose(obj) {
+            var $modal = $(obj);
+
+            $("body").removeClass("scrollNo");
+            $modal.fadeOut("fast").removeClass("show");
+
+            if (lenis) lenis.start();
+
+        }
+
+        // 팝업 닫기/열기
+        function modalNext(current, next) {
+            var $currentModal = $(current);
+            var $nextModal = $(next);
+
+            modalClose($currentModal);
+            setTimeout(() => {
+                modalOpen($nextModal);
+            }, 200);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAL랭 페스티벌</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://lolstatic-a.akamaihd.net/webfonts/live/css/valorant/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lenis.js"></script>
+    <script src="assets/js/lib/gsap.min.js"></script>
+    <script src="assets/js/lib/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/skrollr.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.4.2/pixi.min.js"></script><!-- wave -->
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+</head>
+<body>
+
+    <!-- 라이엇바 상단 -->
+    <header id="riotbar-header"></header>
+    <header id="top-menu"></header>
+
+    <div class="wrap">
+
+        <div class="popupSample">
+            <!-- 
+                [전달사항] modalOpen(id) 열기 / modalClose(id) 닫기 / modalNext(닫을 id, 열 id) 닫고 열기
+            -->
+            <a href="#none" onclick="modalOpen('#modal-loading');">로딩</a>
+            <a href="#none" onclick="modalOpen('#modal-ex01');">포인트X / 응모권X</a>
+            <a href="#none" onclick="modalOpen('#modal-ex02');">포인트O / 응모권X</a>
+            <a href="#none" onclick="modalOpen('#modal-ex03');">포인트X / 응모권O</a>
+            <a href="#none" onclick="modalOpen('#modal-ex04');">포인트O / 응모권O</a>
+            <a href="#none" onclick="modalOpen('#modal-ex05');">보상 미당첨</a>
+            <a href="#none" onclick="modalOpen('#modal-ex06');">레디어나이트 포인트 획득</a>
+
+            <a href="#none" onclick="modalOpen('#modal-ex07');">실물 경품 획득</a>
+            <a href="#none" onclick="modalOpen('#modal-ex08');">경품 이미지 슬라이드(중간)</a>
+            <a href="#none" onclick="modalOpen('#modal-ex09');">특별 굿즈 상세 보기</a>
+
+            <a href="#none" onclick="modalOpen('#modal-ex10');">중복 보상 방지</a>
+            <a href="#none" onclick="modalOpen('#modal-ex11');">보상받기 도중 재고 나가는 case</a>
+            <a href="#none" onclick="modalOpen('#modal-ex12');">보상 교환 기간 종료 후 MDMS 입력 기간 </a>
+        </div>
+
+        <!-- 로딩 START -->
+        <section class="modalPopup" id="modal-loading" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="loading"><p>로딩 중</p></div>
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">
+                                보유 포인트와 응모권이 부족합니다.<br />
+                                플레이하고 보상에 도전해 보세요!
+                            </p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-loading');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-loading');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 로딩 END -->
+
+        <!-- 포인트X / 응모권X START -->
+        <section class="modalPopup" id="modal-ex01" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">
+                                보유 포인트와 응모권이 부족합니다.<br />
+                                플레이하고 보상에 도전해 보세요!
+                            </p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex01');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex01');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 포인트X / 응모권X END -->
+
+        <!-- 포인트O / 응모권X START -->
+        <section class="modalPopup" id="modal-ex02" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">응모하시겠습니까?</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem red" onclick="modalClose('#modal-ex02');">포인트 사용하기</button>
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex02');" disabled>응모권 사용하기</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex02');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 포인트O / 응모권X END -->
+
+        <!-- 포인트X / 응모권O START -->
+        <section class="modalPopup" id="modal-ex03" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">응모하시겠습니까?</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem red" onclick="modalClose('#modal-ex03');" disabled>포인트 사용하기</button>
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex03');">응모권 사용하기</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex03');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 포인트X / 응모권O END -->
+
+        <!-- 포인트O / 응모권O START -->
+        <section class="modalPopup" id="modal-ex04" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">응모하시겠습니까?</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem red" onclick="modalClose('#modal-ex04');">포인트 사용하기</button>
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex04');">응모권 사용하기</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex04');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 포인트O / 응모권O END -->
+
+        <!-- 보상 미당첨 START -->
+        <section class="modalPopup" id="modal-ex05" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">
+                                아쉽게도 당첨되지 않았네요<br />
+                                다시 한 번 보상에 도전해 보세요!
+                            </p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex05');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex05');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 보상 미당첨 END -->
+
+        <!-- 레디어나이트 포인트 획득 START -->
+        <section class="modalPopup" id="modal-ex06" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <h4 class="textXl">축하합니다!</h4>
+                        <strong class="textLg">레디어나이트 포인트 10개</strong>
+                        <div class="imgItme">
+                            <img src="assets/images/img_ex_point.png" alt="레디어나이트 포인트 10개">
+                        </div>
+                        <p class="textXs">※ 스킨의 모션, 이펙트, 음향, 크로마 등을 업그레이드할 수 있는 레디어나이트 포인트입니다.</p>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex06');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex06');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 레디어나이트 포인트 획득 END -->
+
+        <!-- 실물 경품 획득 START -->
+        <section class="modalPopup" id="modal-ex07" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <h4 class="textXl">축하합니다!</h4>
+                        <strong class="textLg">2023-LG-32GP850 32인치</strong>
+                        <div class="imgItme">
+                            <img src="assets/images/img_ex_item.png" alt="2023-LG-32GP850 32인치">
+                        </div>
+                        <p class="redText">당첨된 보상을 받으실 배송지 정보를 입력해 주세요</p>
+                        <p class="textXs">
+                            * 상품 설명 어쩌구 저쩌구<br />
+                            * 배송지 정보를 입력하지 않은 보상은 지급되지 않습니다. <br />
+                            * 0000년 00월 00일부터 순차적으로 배송 지급됩니다. <br />
+                            * 배송지 입력은 나의 보상 내역 확인에서도 입력하실 수 있습니다.
+                        </p>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex07');">배송지 입력</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex07');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 실물 경품 획득 END -->
+         
+        <!-- 경품 이미지 슬라이드(중간) START -->
+        <section class="modalPopup" id="modal-ex08" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <h4 class="textXl">축하합니다!</h4>
+                        <strong class="textLg">2023-LG-32GP850 32인치</strong>
+                        <div class="prizeSlider">
+                            <div class="slideItem"><img src="assets/images/img_ex_item.png" alt="2023-LG-32GP850 32인치"></div>
+                            <div class="slideItem"><img src="assets/images/img_ex_item.png" alt="2023-LG-32GP850 32인치"></div>
+                            <div class="slideItem"><img src="assets/images/img_ex_item.png" alt="2023-LG-32GP850 32인치"></div>
+                            <div class="slideItem"><img src="assets/images/img_ex_item.png" alt="2023-LG-32GP850 32인치"></div>
+                        </div>
+                        <p class="redText">당첨된 보상을 받으실 배송지 정보를 입력해 주세요</p>
+                        <p class="textXs">
+                            * 상품 설명 어쩌구 저쩌구<br />
+                            * 배송지 정보를 입력하지 않은 보상은 지급되지 않습니다. <br />
+                            * 0000년 00월 00일부터 순차적으로 배송 지급됩니다. <br />
+                            * 배송지 입력은 나의 보상 내역 확인에서도 입력하실 수 있습니다.
+                        </p>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex08');">배송지 입력</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex08');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 경품 이미지 슬라이드(중간) END -->
+
+        <!-- 특별 굿즈 상세 보기 START -->
+        <section class="modalPopup" id="modal-ex09" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <strong class="textLg">제트 한정판 바람막이</strong>
+                        <div class="prizeSlider">
+                            <div class="slideItem"><img src="assets/images/img_ex_item2.png" alt="제트 한정판 바람막이"></div>
+                            <div class="slideItem"><img src="assets/images/img_ex_item2.png" alt="제트 한정판 바람막이"></div>
+                            <div class="slideItem"><img src="assets/images/img_ex_item2.png" alt="제트 한정판 바람막이"></div>
+                        </div>
+                        <p class="textXs">
+                            * 상품 설명이 나옵니다.<br />
+                            * 상품 설명이 나옵니다.<br />
+                            * 상품 설명이 나옵니다.<br />
+                            * 상품 설명이 나옵니다.<br />
+                        </p>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex09');">닫기</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex09');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 특별 굿즈 상세 보기 END -->
+
+        <!-- 중복 보상 방지 START -->
+        <section class="modalPopup" id="modal-ex10" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">잘못된 접근입니다.</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex10');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex10');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 중복 보상 방지 END -->
+
+        <!-- 보상받기 도중 재고 나가는 case START -->
+        <section class="modalPopup" id="modal-ex11" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">보상 재고가 없습니다.</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex11');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex11');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 보상받기 도중 재고 나가는 case END -->
+
+        <!-- 보상 교환 기간 종료 후 MDMS 입력 기간 START -->
+        <section class="modalPopup" id="modal-ex12" data-lenis-prevent>
+            <div class="modalCenter">
+                <div class="modalInner">
+                    <div class="modalBody">
+                        <div class="textGroup">
+                            <p class="textMd">보상 기간이 아닙니다.</p>
+                        </div>
+                        <div class="btnGroup">
+                            <button type="button" class="btnItem black" onclick="modalClose('#modal-ex12');">확인</button>
+                        </div>
+                    </div><!-- modalBody END -->
+                    <button type="button" class="btnModalClose" onclick="modalClose('#modal-ex12');">닫기</button>
+                </div><!-- modalInner END -->
+            </div><!-- modalCenter END -->
+        </section>
+        <!-- 보상 교환 기간 종료 후 MDMS 입력 기간 END -->
+
+    </div><!-- wrap END -->
+
+    <!-- 라이엇바 하단 -->
+    <footer id="riotbar-footer"></footer>
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+    
+
+    <script>
+        let lenis;
+
+        $(function () {
+            setTimeout(() => {
+            lenis = new Lenis();
+
+            const raf = (time) => {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            };
+
+            requestAnimationFrame(raf);
+            }, 700);
+            setTimeout(() => {
+                effectActive();
+
+                function effectActive(){
+                    $(".effectActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+
+                textActive();
+
+                function textActive(){
+                    $(".textActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+            }, 600);
+      
+
+            let resizeTimer;
+
+            function initRankSlider() {
+                const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+                if (!isMobile) {
+                    // 랭킹 Desktop&Tablets
+                    const $rankSliderwLg = $(".rankSlider.wLg");
+
+                    if (!$rankSliderwLg.hasClass('slick-initialized')) {
+
+                        $rankSliderwLg.on("init reInit", (event, slick) => {
+                            $(".rankSliderControl.wLg .total").text(slick.slideCount);
+                            $(".rankSliderControl.wLg .index").text((slick.currentSlide || 0) + 1);
+                        }).on("afterChange", (event, slick, currentSlide) => {
+                            $(".rankSliderControl.wLg .index").text(currentSlide + 1);
+                        });
+
+                        $rankSliderwLg.slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            prevArrow: $(".rankSliderControl.wLg .prev"),
+                            nextArrow: $(".rankSliderControl.wLg .next"),
+                            speed: 700,
+                            infinite: true
+                        });
+
+                        $rankSliderwLg.find(".ranking").each(function () {
+                            const rank = parseInt($(this).text(), 10);
+                            if (rank >= 1 && rank <= 3) {
+                                $(this).addClass("rankTop");
+                            }
+                        });
+                    }
+
+                    const $rankSliderwSm = $(".rankSlider.wSm");
+                    if ($rankSliderwSm.hasClass('slick-initialized')) {
+                        $rankSliderwSm.slick('unslick');
+                        $rankSliderwSm.off();
+                    }
+
+                } else {
+                    // 랭킹 mobile
+                    const $rankSliderwSm = $(".rankSlider.wSm");
+
+                    if (!$rankSliderwSm.hasClass('slick-initialized')) {
+
+                        $rankSliderwSm.on("init reInit", (event, slick) => {
+                            $(".rankSliderControl.wSm .total").text(slick.slideCount);
+                            $(".rankSliderControl.wSm .index").text((slick.currentSlide || 0) + 1);
+                        }).on("afterChange", (event, slick, currentSlide) => {
+                            $(".rankSliderControl.wSm .index").text(currentSlide + 1);
+                        });
+
+                        $rankSliderwSm.slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            prevArrow: $(".rankSliderControl.wSm .prev"),
+                            nextArrow: $(".rankSliderControl.wSm .next"),
+                            speed: 700,
+                            infinite: true
+                        });
+
+                        $rankSliderwSm.find(".ranking").each(function () {
+                            const rank = parseInt($(this).text(), 10);
+                            if (rank >= 1 && rank <= 3) {
+                                $(this).addClass("rankTop");
+                            }
+                        });
+                    }
+
+                    const $rankSliderwLg = $(".rankSlider.wLg");
+                    if ($rankSliderwLg.hasClass('slick-initialized')) {
+                        $rankSliderwLg.slick('unslick');
+                        $rankSliderwLg.off();
+                    }
+                }
+            }
+
+            $(window).on("load", function() {
+                initRankSlider();
+            });
+
+            $(window).on("resize", function(){
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function(){
+                    initRankSlider();
+                }, 100);
+            });
+
+            // youTube Slider
+            const $youTubeSlider = $(".youTubeSlider");
+            const $sliderFor = $(".slider-for");
+            const $sliderNav = $(".slider-nav");
+
+            function initSliders() {
+                if ($sliderFor.hasClass('slick-initialized')) {
+                    $sliderFor.slick('unslick');
+                }
+                if ($sliderNav.hasClass('slick-initialized')) {
+                    $sliderNav.slick('unslick');
+                }
+
+                $sliderFor.on("init reInit", function (event, slick) {
+                    $(".youTubeSliderControl .total").text(slick.slideCount);
+                    $(".youTubeSliderControl .index").text((slick.currentSlide || 0) + 1);
+                });
+
+                $sliderFor.on("afterChange", function (event, slick, currentSlide) {
+                    $(".youTubeSliderControl .index").text(currentSlide + 1);
+                });
+
+                $sliderFor.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: true,
+                    infinite: true,
+                    //adaptiveHeight: true,
+                    prevArrow: $(".youTubeSliderControl .prev"),
+                    nextArrow: $(".youTubeSliderControl .next"),
+                    asNavFor: $sliderNav
+                });
+
+                $sliderNav.slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    vertical: true,
+                    focusOnSelect: true,
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    asNavFor: $sliderFor,
+                    responsive: [
+                        {
+                            breakpoint: 769,
+                            settings: {
+                                vertical: false,
+                                variableWidth: true,
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
+                });
+            }
+
+            if ($youTubeSlider.length) {
+                initSliders();
+
+                let resizeTimer;
+                $(window).on("resize", function () {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function () {
+                        initSliders();
+                    }, 200);
+                });
+            }
+        });
+
+        // pregressBar
+        function animatePregressBar() {
+            $('.pregressBar').each(function () {
+                let $bar = $(this);
+                let $em = $bar.find('em');
+
+                if (isInViewport($bar) && !$bar.hasClass('done')) {
+                    $bar.addClass('done');
+                    setTimeout(function () {
+                        let targetWidth = $bar.data('width') || '100%';
+                        $em.css('width', targetWidth);
+                    }, 1000); // 1초 뒤 실행
+                }
+            });
+        }
+        function isInViewport($el) {
+            let rect = $el[0].getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            );
+        }
+        $(window).on('scroll load resize', animatePregressBar);
+
+        // 말풍선 show/hide
+        $(document).on('click', '.btnBubbleOpen, .btnBubbleClose', function (e) {
+            e.preventDefault();
+            
+            const isOpen = $(this).hasClass('btnBubbleOpen');
+            const $bubbleBox = isOpen
+                ? $(this).closest('.top, .ticket').find('.bubbleBox')
+                : $(this).closest('.bubbleBox');
+
+            $bubbleBox.toggleClass('show', isOpen);
+        });
+
+        // 모바일 상품 드래그
+        const gearContainer = document.querySelector(".itemList");
+        if (gearContainer) {
+            const gearList = document.querySelectorAll(".itemList");
+            const scrollBars = document.querySelectorAll(".itemScrollbar");
+
+            if (gearList.length > 0 && scrollBars.length > 0) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    for (let i = 0; i < gearList.length; i++) {
+                        setupDragScroll(gearList[i], scrollBars[i]);
+                    }
+                });
+
+                function setupDragScroll(container, scrollBar) {
+                    let isDragging = false;
+                    let startX = 0;
+                    let startY = 0;
+                    let currentX = 0;
+                    let translateX = 0;
+                    let maxTranslate = 0;
+                    let thumb = scrollBar.querySelector(".scrollThumb");
+
+                    function getMaxTranslate() {
+                        let parentWidth = container.parentElement.clientWidth;
+                        let contentWidth = container.scrollWidth;
+                        return contentWidth - parentWidth;
+                    }
+
+                    function updatePosition(nextX) {
+                        if (nextX > 0) {
+                            nextX = 0;
+                        }
+                        if (nextX < -maxTranslate) {
+                            nextX = -maxTranslate;
+                        }
+                        translateX = nextX;
+                        container.style.transform = "translateX(" + nextX + "px)";
+                        updateThumb();
+                    }
+
+                    function updateThumb() {
+                        let parentWidth = container.parentElement.clientWidth;
+                        let contentWidth = container.scrollWidth;
+                        let thumbWidth = (parentWidth / contentWidth) * scrollBar.clientWidth;
+                        let scrollPercent = maxTranslate === 0 ? 0 : -translateX / maxTranslate;
+                        let thumbX = (scrollBar.clientWidth - thumbWidth) * scrollPercent;
+
+                        if (thumbWidth > scrollBar.clientWidth) {
+                            thumbWidth = scrollBar.clientWidth;
+                        }
+                        thumb.style.width = thumbWidth + "px";
+                        thumb.style.transform = "translateX(" + thumbX + "px)";
+                    }
+
+                    function startDrag(e) {
+                        if (window.innerWidth > 768) {
+                            return;
+                        }
+                        isDragging = true;
+                        startX = e.type.indexOf("mouse") > -1 ? e.pageX : e.touches[0].pageX;
+                        startY = e.type.indexOf("mouse") > -1 ? e.pageY : e.touches[0].pageY;
+                        maxTranslate = getMaxTranslate();
+                        container.style.transition = "none";
+                        thumb.style.transition = "none";
+                    }
+
+                    function duringDrag(e) {
+                        if (!isDragging || window.innerWidth > 768) {
+                            return;
+                        }
+
+                        let x = e.type.indexOf("mouse") > -1 ? e.pageX : e.touches[0].pageX;
+                        let y = e.type.indexOf("mouse") > -1 ? e.pageY : e.touches[0].pageY;
+
+                        let deltaX = x - startX;
+                        let deltaY = y - startY;
+
+                        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                            if (e.cancelable) {
+                                e.preventDefault();
+                            }
+                            updatePosition(currentX + deltaX);
+                        }
+                    }
+
+                    function endDrag() {
+                        if (window.innerWidth > 768) {
+                            return;
+                        }
+                        isDragging = false;
+                        currentX = translateX;
+                        container.style.transition = "transform 0.3s ease";
+                        thumb.style.transition = "transform 0.3s ease";
+                    }
+
+                    function resetPosition() {
+                        translateX = 0;
+                        currentX = 0;
+                        container.style.transform = "translateX(0px)";
+                        updateThumb();
+                    }
+
+                    let dragTargets = [container, scrollBar];
+                    for (let j = 0; j < dragTargets.length; j++) {
+                        let target = dragTargets[j];
+                        target.addEventListener("mousedown", startDrag);
+                        target.addEventListener("touchstart", startDrag, { passive: false });
+                    }
+
+                    document.addEventListener("mousemove", duringDrag);
+                    document.addEventListener("touchmove", duringDrag, { passive: false });
+                    document.addEventListener("mouseup", endDrag);
+                    document.addEventListener("touchend", endDrag);
+
+                    window.addEventListener("resize", function () {
+                        maxTranslate = getMaxTranslate();
+                        if (window.innerWidth > 768) {
+                            resetPosition();
+                        } else {
+                            updateThumb();
+                        }
+                    });
+
+                    if (window.innerWidth <= 768) {
+                        maxTranslate = getMaxTranslate();
+                        updateThumb();
+                    }
+                }
+            }
+        }
+ 
+        // 자주 묻는 질문
+        document.querySelectorAll(".section05 .question").forEach(function (question) {
+            question.addEventListener("click", function () {
+                let clickedLi = question.closest("li");
+                document.querySelectorAll(".section05 ul li").forEach(function (li) {
+                    if (li === clickedLi) {
+                        if (li.classList.contains("active")) {
+                            li.classList.remove("active");
+                        } else {
+                            li.classList.add("active");
+                        }
+                    } else {
+                        li.classList.remove("active");
+                    }
+                });
+            });
+        });
+
+        // topbar show/hide
+        setTimeout(function(){
+            topBar();
+        }, 800);
+
+        function topBar() {
+            let topBarCheck = $(".topBar");
+            if (topBarCheck.length) {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 80) {
+                    topBarCheck.addClass("active");
+                    } else {
+                        topBarCheck.removeClass("active");
+                    }
+                });
+            }
+        }
+        // VAL랭 페스티벌 섹션으로 이동
+        function moveToOne() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section1']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+		// 스페셜 이벤트 섹션으로 이동
+		function moveToTwo() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section2']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+		// 기념품 샵 섹션으로 이동
+		function moveToThree() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section3']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+        if (document.querySelector(".topBar")) {
+			const moveItems = document.querySelectorAll(".move");
+	
+			if (moveItems.length >= 3) {
+				moveItems[0].addEventListener("click", moveToOne);
+				moveItems[1].addEventListener("click", moveToTwo);
+				moveItems[2].addEventListener("click", moveToThree);
+			}
+	
+			function updateActiveState(entries) {
+				let activeSection = null;
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						if (!activeSection || entry.target.getBoundingClientRect().top > activeSection.getBoundingClientRect().top) {
+							activeSection = entry.target;
+						}
+					}
+				});
+				if (activeSection) {
+					const sectionName = activeSection.getAttribute("data-section");
+					document.querySelectorAll(".move").forEach(function (item) {
+						if (item.getAttribute("data-move") === sectionName) {
+							item.classList.add("active");
+						} else {
+							item.classList.remove("active");
+						}
+					});
+				}
+			}
+	
+			const observerOptions = {
+				root: null,
+				threshold: 0.2,
+			};
+			const observer = new IntersectionObserver(updateActiveState, observerOptions);
+			document.querySelectorAll("[data-section]").forEach(function (element) {
+				observer.observe(element);
+			});
+		}
+
+        // 팝업열기
+        function modalOpen(obj) {
+            var $modal = $(obj);
+
+            $(".modalPopup.show").each(function () {
+                modalClose($(this));
+            });
+
+            $("body").addClass("scrollNo");
+            $modal.fadeIn("fast").addClass("show");
+            initSliderInModal($modal);
+
+            if (lenis) lenis.stop();
+
+            let $slider = $modal.find(".prizeSlider.slick-initialized");
+            if ($slider.length) {
+                $slider.each(function () {
+                    $(this).slick("setPosition");
+                    $(this).slick("slickGoTo", 0, true);
+                    $(this).slick("slickPlay");
+                });
+            }
+        }
+
+        // 팝업닫기
+        function modalClose(obj) {
+            var $modal = $(obj);
+
+            $("body").removeClass("scrollNo");
+            $modal.fadeOut("fast").removeClass("show");
+
+            if (lenis) lenis.start();
+
+        }
+
+        // 팝업 닫기/열기
+        function modalNext(current, next) {
+            var $currentModal = $(current);
+            var $nextModal = $(next);
+
+            modalClose($currentModal);
+            setTimeout(() => {
+                modalOpen($nextModal);
+            }, 200);
+        }
+
+        // 팝업 내 슬라이드
+        function initSliderInModal(modal) {
+            let $slider = $(modal).find(".prizeSlider");
+            if ($slider.length && !$slider.hasClass("slick-initialized")) {
+                $slider.slick({
+                    slidesToShow : 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    speed: 800,
+                    infinite: true,
+                    swipeToSlide: true,
+                    draggable: true,
+                    arrows: true,
+                    dots: true,
+                    pauseOnHover: false,
+                    responsive:[{ breakpoint: 767, settings: { arrows: false } }]
+                });
+            }
+        }
+    </script>
+    <script>
+    // 비주얼 wave script
+    (function() {
+        
+        window.CanvasSlideshow = function( options ) {
+
+            var that  =   this;
+            options                     = options || {};
+            options.stageWidth          = options.hasOwnProperty('stageWidth') ? options.stageWidth : 2560;
+            options.stageHeight         = options.hasOwnProperty('stageHeight') ? options.stageHeight : 1080;
+            //options.stageWidth = options.hasOwnProperty('stageWidth')? options.stageWidth: window.innerWidth;
+            //options.stageHeight = options.hasOwnProperty('stageHeight')? options.stageHeight: window.innerHeight;
+            options.pixiSprites         = options.hasOwnProperty('sprites') ? options.sprites : [];
+            options.centerSprites       = options.hasOwnProperty('centerSprites') ? options.centerSprites : false;
+            options.autoPlay            = options.hasOwnProperty('autoPlay') ? options.autoPlay : true;
+            options.autoPlaySpeed       = options.hasOwnProperty('autoPlaySpeed') ? options.autoPlaySpeed : [10, 3];
+            options.fullScreen          = options.hasOwnProperty('fullScreen') ? options.fullScreen : true;
+            options.displacementImage   = options.hasOwnProperty('displacementImage') ?     options.displacementImage : '';
+            options.displaceAutoFit     = options.hasOwnProperty('displaceAutoFit')  ?  options.displaceAutoFit : false; 
+            options.wacky               = options.hasOwnProperty('wacky') ? options.wacky : false;
+            options.interactive         = options.hasOwnProperty('interactive') ? options.interactive : false;
+            options.interactionEvent    = options.hasOwnProperty('interactionEvent') ? options.interactionEvent : '';
+            options.displacementCenter  = options.hasOwnProperty('displacementCenter') ? options.displacementCenter : false;
+            options.dispatchPointerOver = options.hasOwnProperty('dispatchPointerOver') ? options.dispatchPointerOver : false;
+
+            //  PIXI VARIABLES
+            /// ---------------------------    
+            var renderer            = new PIXI.autoDetectRenderer( options.stageWidth, options.stageHeight, { transparent: true });
+            var stage               = new PIXI.Container();
+            var slidesContainer     = new PIXI.Container();
+            var displacementSprite  = new PIXI.Sprite.fromImage( options.displacementImage );
+            var displacementFilter  = new PIXI.filters.DisplacementFilter( displacementSprite );
+
+            /// ---------------------------
+            //  INITIALISE PIXI
+            /// ---------------------------      
+            this.initPixi = function() {
+
+            // Add canvas to the HTML
+            //document.body.appendChild( renderer.view );
+            document.getElementById('js-canvas-wrapper').appendChild(renderer.view);
+
+            // Add child container to the main container 
+            stage.addChild( slidesContainer );
+
+            // Enable Interactions
+            stage.interactive = true; 
+
+            // Fit renderer to the screen
+            if ( options.fullScreen === true ) {
+                renderer.view.style.objectFit = 'cover';
+                renderer.view.style.width     = '100%';
+                renderer.view.style.height    = '100%';
+                renderer.view.style.top       = '50%';
+                renderer.view.style.left      = '50%';
+                renderer.view.style.webkitTransform = 'translate( -50%, -50% ) scale(1.05)';
+                renderer.view.style.transform = 'translate( -50%, -50% ) scale(1.05)';           
+            } else {
+                renderer.view.style.maxWidth  = '100%';
+                renderer.view.style.top       = '50%';
+                renderer.view.style.left      = '50%';
+                renderer.view.style.webkitTransform = 'translate( -50%, -50% )';
+                renderer.view.style.transform = 'translate( -50%, -50% )';          
+            }
+
+            displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+
+            // Set the filter to stage and set some default values for the animation
+            stage.filters = [displacementFilter];        
+
+            if ( options.autoPlay === false ) {
+                displacementFilter.scale.x = 0;
+                displacementFilter.scale.y = 0;
+            }
+
+            if ( options.wacky === true ) {
+
+                displacementSprite.anchor.set(0.5);
+                displacementSprite.x = renderer.width / 2;
+                displacementSprite.y = renderer.height / 2; 
+            }
+
+            displacementSprite.scale.x = 2;
+            displacementSprite.scale.y = 2;
+
+            // PIXI tries to fit the filter bounding box to the renderer so we optionally bypass
+            displacementFilter.autoFit = options.displaceAutoFit;
+
+            stage.addChild( displacementSprite );
+
+            };
+
+            /// ---------------------------
+            //  LOAD SLIDES TO CANVAS
+            /// ---------------------------          
+            this.loadPixiSprites = function( sprites ) {
+
+            var rSprites = options.sprites;
+
+            for ( var i = 0; i < rSprites.length; i++ ) {
+
+                var texture   = new PIXI.Texture.fromImage( sprites[i] );
+                var image     = new PIXI.Sprite( texture );
+
+                if ( options.centerSprites === true ) {
+                image.anchor.set(0.5);
+                image.x = renderer.width / 2;
+                image.y = renderer.height / 2;            
+                }
+
+                slidesContainer.addChild( image );
+
+            } 
+
+            };
+
+            /// ---------------------------
+            //  DEFAULT RENDER/ANIMATION
+            /// ---------------------------        
+            if ( options.autoPlay === true ) {
+
+            var ticker = new PIXI.ticker.Ticker();
+
+            ticker.autoStart = options.autoPlay;
+
+            ticker.add(function( delta ) {
+
+                displacementSprite.x += options.autoPlaySpeed[0] * delta;
+                displacementSprite.y += options.autoPlaySpeed[1];
+                renderer.render( stage );
+
+            });
+
+            }  else {
+
+            var render = new PIXI.ticker.Ticker();
+
+            render.autoStart = true;
+
+            render.add(function( delta ) {
+                renderer.render( stage );
+            });        
+
+            }    
+
+            /// ---------------------------
+            //  INIT FUNCTIONS
+            /// ---------------------------    
+
+            this.init = function() {
+            that.initPixi();
+            that.loadPixiSprites( options.pixiSprites );
+            };
+
+            /// ---------------------------
+            //  START 
+            /// ---------------------------           
+            this.init();
+        };
+    })();
+
+    var spriteImagesSrc = [];
+    spriteImagesSrc.push('assets/images/bg_wave.jpg');
+
+    var initCanvasSlideshow = new CanvasSlideshow({
+        sprites: spriteImagesSrc,
+        displacementImage: 'https://raw.githubusercontent.com/Pierrinho/elephant/master/pattern-clouds.jpg',
+        autoPlay: true,
+        autoPlaySpeed: [0, 6],
+        interactive: false,
+        interactionEvent: 'click', // 'click', 'hover', 'both' 
+        displaceAutoFit: false,
+        dispatchPointerOver: true // restarts pointerover event after click 
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAL랭 페스티벌</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://lolstatic-a.akamaihd.net/webfonts/live/css/valorant/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popup.css">
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lenis.js"></script>
+    <script src="assets/js/lib/gsap.min.js"></script>
+    <script src="assets/js/lib/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/skrollr.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.4.2/pixi.min.js"></script><!-- wave -->
+    <script defer="defer" src="https://cdn.rgpub.io/public/live/riotbar/latest/kr-valorant-evergreen.ko_KR.js"></script><!-- 라이엇바 상하단 js -->
+</head>
+<body>
+    
+    <!-- 라이엇바 상단 -->
+    <header id="riotbar-header"></header>
+    <header id="top-menu"></header>
+
+    <div class="wrap">
+        <nav class="topBar">
+            <div class="topBarInner">
+                <ul>
+                    <li class="move" data-move="section1" onclick="moveToOne()">VAL랭 페스티벌</li>
+                    <li class="move" data-move="section2" onclick="moveToTwo()">스페셜 이벤트</li>
+                    <li class="move" data-move="section3" onclick="moveToThree()">기념품 샵</li>
+                    <li>
+                        <a href="#" target="_blank">PC방 혜택 <img src="assets/images/icon_blank.svg" alt="" /></a>
+                    </li>
+                </ul>
+                <div class="right">
+                    <p>
+                        <span class="number">0</span>
+                        <span class="point">P</span>
+                        보유
+                        <!-- <a href="#" class="btnRefresh">새로고침</a> -->
+                    </p>
+                    <a href="#" class="btnGetlist">획득 내역 보기</a>
+                </div>
+            </div>
+        </nav><!-- topBar END -->
+        <section class="section01">
+            <div class="bgOcean"></div>
+            <div class="objectWrap">
+                <div class="objectBear effectActive"></div>
+                <div class="objectHarbor effectActive"></div>
+                <div class="objectRedtube effectActive"></div>
+                <div class="objectYellowtube effectActive"></div>
+            </div>
+            <div id="js-canvas-wrapper" class="canvas-wrapper"></div>
+            <div class="section01_01">
+                <div class="visualWrap">
+                    <div class="visualImg">
+                        <img src="assets/images/img_visual.png" alt="VAL랭 페스티벌" />
+                    </div>
+                    <div class="visualTitle">
+                        <div class="title01">
+                            올여름, 멈추지 않는 도전의 페스티벌!<br />
+                            쌓아 올린 시간만큼 보상을 쟁취하자!
+                        </div>
+                        <div class="title02" data-section="section1">
+                            2025년 7월 18일 (금) 10:00 - 8월 20일 (수) 23:59
+                        </div>
+                    </div>
+                </div><!-- visualWrap END -->
+                <div class="playWrap">
+                    <div class="playBox">
+                        <div class="playTime">
+                            <strong>경쟁전 플레이 시간 <a href="#" class="btnRefresh">새로고침</a></strong>
+                            <div class="time">
+                                <span>0</span><span>분</span>
+                            </div>
+                        </div>
+                        <div class="playPoint">
+                            <strong>총 획득 포인트</strong>
+                            <div class="point">
+                                <span>0</span><span>P</span>
+                            </div>
+                            <a href="#" class="btnGetlist">획득 내역 > </a>
+                        </div>
+                        <div class="bubble01">경쟁전 1분마다 5P 획득 가능!</div>
+                    </div>
+                    <div class="pregressWrap">
+                        <strong>//경쟁전 플레이 시간</strong>
+                        <div class="pregressBar" data-width="0%">
+                            <em></em>
+                        </div>
+                        <ul>
+                            <li>
+                                <p><span>0</span><span>분</span></p>
+                            </li>
+                            <li>
+                                <p><span>100</span><span>분</span></p>
+                                <div class="img"><img src="assets/images/img_pregress01.png" alt="+500P"></div>
+                            </li>
+                            <li>
+                                <p><span>300</span><span>분</span></p>
+                                <div class="img"><img src="assets/images/img_pregress02.png" alt="응모권x2"></div>
+                            </li>
+                            <li>
+                                <p><span>600</span><span>분</span></p>
+                                <div class="img"><img src="assets/images/img_pregress03.png" alt="+2,000P"></div>
+                            </li>
+                            <li>
+                                <p><span>1,000</span><span>분+</span></p>
+                                <div class="img"><img src="assets/images/img_pregress04.png" alt="응모권x4"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- playWrap END -->
+            </div><!-- section01_01 END -->
+            <div class="section01_02" data-section="section2">
+                <div class="specialevent">
+                    <div class="left">
+                        <div class="title">
+                            <div class="sm textActiveHidden">
+                                <span class="textActive">SPECIAL EVENT</span>
+                            </div>
+                            <div class="lg textActiveHidden">
+                                <strong class="textActive">상패를<br class="show-768" /> 차지하라!</strong>
+                            </div>
+                            <p>
+                                최종 TOP 50인에게 주어지는<br />
+                                '내 아이디와 티어가 새겨진' 실물 상패!
+                            </p>
+                            <div class="lastTime">
+                                <span>랭킹 종료까지</span>
+                                <em>30일 5시간 36분</em>
+                            </div>
+                        </div>
+                        <div class="plaqueImg">
+                            <img src="assets/images/img_plaque.png" alt="상패이미지" class="none-768">
+                            <img src="assets/images/img_plaque_m.png" alt="상패이미지" class="show-768">
+                        </div>
+                    </div><!-- left END -->
+                    <div class="rankWrap">
+                        <div class="top">
+                            <div class="eventText">
+                                // EVENT RANKING<div class="relative">
+                                    <a href="#" class="btnBubbleOpen btnRankinfo">info</a>
+                                    <div class="bubbleBox bubble02">
+                                        <p>
+                                            이벤트 페이지 로그인 참여자의<br />
+                                            경쟁전 플레이 시간 기준 랭킹입니다.
+                                        </p>
+                                        <a href="#" class="btnBubbleClose">닫기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btnTop50Open">TOP 50 후보 등록 ></a>
+                        </div>
+                        <div class="myRank">
+                            <p>순위 없음</p>
+                            <p>나의 닉넴</p>
+                            <p><em>0</em>분</p>
+                        </div>
+                        <div class="rankSlideWrap">
+                            <!-- 데스크탑 테블릿 -->
+                            <div class="rankSlider wLg">
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">1</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,999</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">2</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,998</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">3</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,997</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">4</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,996</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">5</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">6</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">7</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">8</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">9</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">10</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">11</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">12</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">13</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">14</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">15</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">16</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">17</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">18</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">19</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">20</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">21</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">22</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">23</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">24</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">25</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">26</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">27</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">28</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">29</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">30</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">31</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">32</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">33</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">34</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">35</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">36</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">37</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">38</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">39</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">40</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">41</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">42</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">43</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">44</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">45</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">46</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">47</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">48</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">49</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">50</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- rankSlider END -->
+                            <div class="rankSliderControl wLg">
+                                <button class="prev">Prev</button>
+                                <div class="count">
+                                    <span class="index"></span> // <span class="total"></span>
+                                </div>
+                                <button class="next">Next</button>
+                            </div>
+                             <!-- 모바일 -->
+                            <div class="rankSlider wSm">
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">1</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,999</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">2</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,998</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">3</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,997</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">4</p>
+                                            <p class="nick">닉네임</p>
+                                            <p class="time"><span>99,996</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">5</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">6</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">7</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">8</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">9</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">10</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">11</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">12</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">13</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">14</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">15</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">16</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">17</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">18</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">19</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">20</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">21</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">22</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">23</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">24</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">25</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">26</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">27</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">28</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">29</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">30</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">31</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">32</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">33</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">34</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">35</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                     </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">36</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">37</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">38</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">39</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">40</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">41</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">42</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">43</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">44</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">45</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                     </ul>
+                                </div>
+                                <div class="slideItem">
+                                    <ul>
+                                        <li>
+                                            <p class="ranking">46</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">47</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">48</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">49</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                        <li>
+                                            <p class="ranking">50</p>
+                                            <p class="nick">-</p>
+                                            <p class="time"><span>-</span>분</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- rankSlider END -->
+                            <div class="rankSliderControl wSm">
+                                <button class="prev">Prev</button>
+                                <div class="count">
+                                    <span class="index"></span> // <span class="total"></span>
+                                </div>
+                                <button class="next">Next</button>
+                            </div>
+                        </div><!-- rankSlideWrap END -->
+                    </div><!-- rankWrap END -->
+                    <div class="plaqueInfo">
+                        <dt>상패 수령 방법</dt>
+                        <dd>TOP 50에 진입하면 ’TOP 50 후보 등록’ 버튼을 통해 개인 정보를 입력해 주세요.</dd>
+                        <dd>최종 TOP 50 선정 시 별도의 연락을 드립니다.</dd>
+                        <dd>아이디와 티어가 새겨진 실물 상패로, 이벤트 종료 후 발송까지 <br />한 달 내외의 기간이 걸릴 수 있습니다.</dd>
+                    </div><!-- plaqueInfo END -->
+                </div><!-- specialevent END -->
+            </div><!-- section01_02 END -->
+        </section><!-- section01 END -->
+
+        <section class="section02" data-section="section3">
+            <div class="objectWrap">
+                <div class="objectTree01 effectActive"></div>
+                <div class="objectTree02 effectActive"></div>
+                <div class="objectTree03 effectActive"></div>
+                <div class="objectTree04 effectActive"></div>
+            </div>
+            <div class="title">
+                <div class="textActiveHidden">
+                    <h2 class="textActive">
+                        <img src="assets/images/text_giftshop.png" alt="기념품 샵" class="none-768">
+                        <img src="assets/images/text_giftshop_m.png" alt="기념품 샵" class="show-768">
+                    </h2>
+                </div>
+                <div class="textSm">
+                    <div class="textActiveHidden">
+                        <p class="textActive">열심히 달린 만큼 주어지는 기회!</p>
+                    </div>
+                    <div class="textActiveHidden">
+                        <p class="textActive">원하는 보상 응모하고 선물 받아가자!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="myPointWrap">
+                <div class="point">
+                    <p>보유 포인트<a href="#" class="btnRefresh">새로고침</a></p>
+                    <span><em>0</em>P</span>
+                </div>
+                <div class="ticket">
+                    <p>보유 응모권<a href="#" class="btnBubbleOpen btnTicketinfo">info</a></p>
+                    <div class="bubbleBox bubble03">
+                        <p>원하는 보상에 무료로 응모할 수 있는 응모권입니다.</p>
+                        <a href="#" class="btnBubbleClose">닫기</a>
+                    </div>
+                    <span><em>0</em>장</span>
+                </div>
+            </div>
+            <div class="btnGetList"><a href="#">획득 내역 &gt;</a></div>
+
+            <h3 class="itemTitle">발로란트 굿즈</h3>
+            <div class="itemList">
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0101.png" alt="발로란트 크로스백">
+                    <p class="name">발로란트 크로스백</p>
+                    <p class="count">200개 남음 <span>/ 200개</span></p>
+                    <button type="button" class="btnItem">400<span>P</span></button>
+                    <button type="button" class="btnItemView"><img src="assets/images/icon_search.svg" alt=""></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0102.png" alt="웨이레이 티셔츠 M">
+                    <p class="name">웨이레이 티셔츠 M</p>
+                    <p class="count">500개 남음 <span>/ 500개</span></p>
+                    <button type="button" class="btnItem">400<span>P</span></button>
+                    <button type="button" class="btnItemView"><img src="assets/images/icon_search.svg" alt=""></button>
+                </div>
+            </div><!-- itemList END -->
+            <div class="itemScrollbar">
+                <div class="scrollThumb"></div>
+            </div>
+            <h3 class="itemTitle">디지털 기어</h3>
+            <div class="itemList">
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0201.png" alt="LG 27GS85Q 27인치">
+                    <p class="name">LG 27GS85Q 27인치</p>
+                    <p class="count">4개 남음 <span>/ 4개</span></p>
+                    <button type="button" class="btnItem">800<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0202.png" alt="Razer Orochi V2 마우스">
+                    <p class="name">Razer Orochi V2 마우스</p>
+                    <p class="count">10개 남음 <span>/ 10개</span></p>
+                    <button type="button" class="btnItem">600<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0203.png" alt="로지텍 G PRO X TKL RAPID 게이밍 기계식 키보드">
+                    <p class="name">로지텍 G PRO X TKL RAPID 게이밍 기계식 키보드</p>
+                    <p class="count">10개 남음 <span>/ 10개</span></p>
+                    <button type="button" class="btnItem">600<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0204.png" alt="ATK VXE R1 PRO MAX 유무선 잠자리 게이밍 마우스">
+                    <p class="name">ATK VXE R1 PRO MAX 유무선 잠자리 게이밍 마우스</p>
+                    <p class="count">50개 남음 <span>/ 50개</span></p>
+                    <button type="button" class="btnItem">400<span>P</span></button>
+                </div>
+            </div><!-- itemList END -->
+            <div class="itemScrollbar">
+                <div class="scrollThumb"></div>
+            </div>
+            <h3 class="itemTitle">디지털 쿠폰</h3>
+            <div class="itemList">
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0301.png" alt="굽네치킨 고추바사삭 곱빼기+콜라1.25L">
+                    <p class="name">굽네치킨 고추바사삭 곱빼기+콜라1.25L</p>
+                    <p class="count">200개 남음 <span>/ 200개</span></p>
+                    <button type="button" class="btnItem">300<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0302.png" alt="버거킹 치즈와퍼주니어세트">
+                    <p class="name">버거킹 치즈와퍼주니어세트</p>
+                    <p class="count">600개 남음 <span>/ 600개</span></p>
+                    <button type="button" class="btnItem">200<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0303.png" alt="네이버페이 포인트 5,000원">
+                    <p class="name">네이버페이 포인트 5,000원</p>
+                    <p class="count">800개 남음 <span>/ 800개</span></p>
+                    <button type="button" class="btnItem">200<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0304.png" alt="이디야 달고나 아이스크림 와플">
+                    <p class="name">이디야 달고나 아이스크림 와플</p>
+                    <p class="count">900개 남음 <span>/ 900개</span></p>
+                    <button type="button" class="btnItem">200<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0305.png" alt="GS25 정통보름달">
+                    <p class="name">GS25 정통보름달</p>
+                    <p class="count">2,000개 남음 <span>/ 2,000개</span></p>
+                    <button type="button" class="btnItem">100<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0306.png" alt="GS25 웰치스포도탄산355ML">
+                    <p class="name">GS25 웰치스포도탄산355ML</p>
+                    <p class="count">2,000개 남음 <span>/ 2,000개</span></p>
+                    <button type="button" class="btnItem">100<span>P</span></button>
+                </div>
+                <div class="item">
+                    <img class="soldoutImg" src="assets/images/img_soldout.png" alt="품절">
+                    <img class="itemImg" src="assets/images/img_item0307.png" alt="CU 메로나">
+                    <p class="name">CU 메로나</p>
+                    <p class="count">2,000개 남음 <span>/ 2,000개</span></p>
+                    <button type="button" class="btnItem">100<span>P</span></button>
+                </div>
+            </div><!-- itemList END -->
+            <div class="itemScrollbar">
+                <div class="scrollThumb"></div>
+            </div>
+        </section><!-- section02 END  -->
+        <section class="section03" data-section="section4">
+            <div class="objectWrap">
+                <div class="objectTree05"></div>
+                <div class="objectFlamingo"></div>
+            </div>
+            <div class="title">
+                <div class="inner">
+                    <div class="textActiveHidden">
+                        <h2 class="textActive">
+                            <img src="assets/images/text_pcReward.png" alt="PC방 특별 보상" class="none-768">
+                            <img src="assets/images/text_pcReward_m.png" alt="PC방 특별 보상" class="show-768">
+                        </h2>
+                    </div>
+                    <div class="textActiveHidden">
+                        <p class="textActive">PC방에서 경쟁전 플레이만 해도<br class="show-768" /> 레디어나이트 포인트 100% 획득!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 획득 완료시 .item에 get / 보상 받기 전 .item에 after 클래스 추가 -->
+            <div class="pcReward">
+                <div class="first">
+                    <div class="top"><h3>PC방 첫 방문</h3></div>
+                    <div class="box">
+                        <p>// 플레이 1회</p>
+                        <div class="item after">
+							<img class="soldoutImg" src="assets/images/img_get.png" alt="획득 완료">
+							<img class="itemImg" src="assets/images/img_pointx20.png" alt="레디어나이트 포인트 20개">
+							<button type="button">보상 받기</button>
+						</div>
+                    </div>
+                </div>
+                <div class="time">
+                    <div class="top">
+                        <h3>PC방 경쟁전 플레이 시간</h3>
+                        <div class="pregressBar" data-width="0%">
+                            <em></em>
+                        </div>
+                        <p><span>0/500</span>분</p>
+                    </div>
+                    <div class="box">
+                        <ul>
+                            <li>
+                                <p>// 30분 달성</p>
+                                <div class="item after">
+                                    <img class="soldoutImg" src="assets/images/img_get.png" alt="획득 완료">
+                                    <img class="itemImg" src="assets/images/img_pointx10.png" alt="레디어나이트 포인트 10개">
+                                    <button type="button">보상 받기</button>
+                                </div>
+                            </li>
+                            <li>
+                                <p>// 100분 달성</p>
+                                <div class="item after">
+                                    <img class="soldoutImg" src="assets/images/img_get.png" alt="획득 완료">
+                                    <img class="itemImg" src="assets/images/img_pointx20.png" alt="레디어나이트 포인트 20개">
+                                    <button type="button">보상 받기</button>
+                                </div>
+                            </li>
+                            <li>
+                                <p>// 300분 달성</p>
+                                <div class="item after">
+                                    <img class="soldoutImg" src="assets/images/img_get.png" alt="획득 완료">
+                                    <img class="itemImg" src="assets/images/img_pointx30.png" alt="레디어나이트 포인트 30개">
+                                    <div class="text">
+                                        <button type="button">보상 받기</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>// 500분 달성</p>
+                                <div class="item after">
+                                    <img class="soldoutImg" src="assets/images/img_get.png" alt="획득 완료">
+                                    <img class="itemImg" src="assets/images/img_pointx40.png" alt="레디어나이트 포인트 40개">
+                                    <button type="button">보상 받기</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section><!-- section03 END -->
+        <section class="section04">
+            <div class="youTubeWrap">
+                <div class="textActiveHidden">
+                    <h2 class="textActive">발로란트 <br class="show-768" />신규 소식</h2>
+                </div>
+                <div class="textActiveHidden">
+                    <p class="textActive">놓치면 아쉬운 업데이트 소식, <br class="show-768" />지금 바로 확인하세요!</p>
+                </div>
+                <div class="youTubeSlider">
+                    <div class="sliderForWrap">
+                        <div class="slider-for">
+                            <div class="slideItem">
+                                <a href="#" class="link" target="_blank"></a>
+                                <div class="img"><img src="assets/images/youTube_thumbnail01.jpg" alt=""></div>
+                                <p class="title">제목이 나옵니다.1제목이 나옵니다.1제목이 나옵니다.</p>
+                            </div>
+                            <div class="slideItem">
+                                <a href="#" class="link" target="_blank"></a>
+                                <div class="img"><img src="assets/images/youTube_thumbnail02.jpg" alt=""></div>
+                                <p class="title">제목이 나옵니다.2</p>
+                            </div>
+                            <div class="slideItem">
+                                <a href="#" class="link" target="_blank"></a>
+                                <div class="img"><img src="assets/images/youTube_thumbnail03.jpg" alt=""></div>
+                                <p class="title">제목이 나옵니다.3</p>
+                            </div>
+                            <div class="slideItem">
+                                <a href="#" class="link" target="_blank"></a>
+                                <div class="img"><img src="assets/images/youTube_thumbnail04.jpg" alt=""></div>
+                                <p class="title">제목이 나옵니다.4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sliderNavWrap">
+                        <div class="slider-nav">
+                            <div class="slideItem">
+                                <div class="img"><img src="assets/images/youTube_thumbnail01.jpg" alt=""></div>
+                            </div>
+                            <div class="slideItem">
+                                <div class="img"><img src="assets/images/youTube_thumbnail02.jpg" alt=""></div>
+                            </div>
+                            <div class="slideItem">
+                                <div class="img"><img src="assets/images/youTube_thumbnail03.jpg" alt=""></div>
+                            </div>
+                            <div class="slideItem">
+                                <div class="img"><img src="assets/images/youTube_thumbnail04.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="youTubeSliderControl">
+                        <button class="prev">Prev</button>
+                        <div class="count">
+                            <span class="index"></span> // <span class="total"></span>
+                        </div>
+                        <button class="next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </section><!-- section04 END -->
+        <section class="section05">
+            <div class="textActiveHidden">
+                <h2 class="textActive">자주 묻는 질문</h2>
+            </div>
+            <div class="questionList">
+                <ul>
+                    <li>
+                        <div class="question">
+                            <div><span>Q.</span>이벤트에 어떻게 참여할 수 있나요?</div>
+                            <img src="assets/images/question_plus_icon.svg" alt="plus">
+                        </div>
+                        <div class="answer">
+                            <span>A. </span>
+                            <span class="text">
+                                발로란트 경쟁전 플레이 1분당 5P씩 포인트가 자동 지급됩니다.<br />
+                                나의 획득/사용 내역은 이벤트 페이지에 로그인 후 확인할 수 있습니다.<br />
+                                경쟁전 달리고 상점에서 원하는 보상에 응모해 보세요.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <div><span>Q.</span>실물 상패는 어떻게 받을 수 있나요?</div>
+                            <img src="assets/images/question_plus_icon.svg" alt="plus">
+                        </div>
+                        <div class="answer">
+                            <span>A. </span>
+                            <span class="text">
+                                이벤트 페이지에 로그인한 플레이어 중 이벤트 종료일 기준 경쟁전 누적 플레이 시간 TOP 50 안에 든 플레이어들에게 실물 상패가 증정됩니다. 이벤트 기간 내 TOP 50 랭크 시 [TOP 50 후보 등록] 버튼을 통해 개인 정보를 입력해 주세요. 최종 TOP 50에 선정되면 별도의 연락을 드릴 예정입니다.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <div><span>Q.</span>플레이 장소와 모드에 제한이 있나요?</div>
+                            <img src="assets/images/question_plus_icon.svg" alt="plus">
+                        </div>
+                        <div class="answer">
+                            <span>A.</span>
+                            <span class="text">
+                                PC방, 집 어디서든 경쟁전을 플레이하면 포인트를 획득할 수 있습니다.<br />
+                                단, PC방 특별 보상은 PC방에서 경쟁전 플레이 시에만 획득 가능합니다.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <div><span>Q.</span>보상은 언제 어떻게 받을 수 있나요?</div>
+                            <img src="assets/images/question_plus_icon.svg" alt="plus">
+                        </div>
+                        <div class="answer">
+                            <span>A.</span>
+                            <span class="text">
+                                레디어나이트 포인트는 달성 즉시 획득 및 사용 가능합니다.<br />
+                                디지털 쿠폰과 발로란트 굿즈, 디지털 기어 등 실물 보상은 입력하신 배송지로 9월 1일부터 순차 발송 예정입니다.<br />
+                                실물 상패는 제작 상품으로 이벤트 종료 후 발송까지 한 달 내외의 기간이 걸릴 수 있습니다.
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="detail" target="_blank">공지 보기 &gt;</a>
+            </div>
+		</section><!-- section05 END -->
+
+    </div><!-- wrap end -->
+
+    <!-- 라이엇바 하단 -->
+    <footer id="riotbar-footer"></footer>
+   
+     <script>
+        let lenis;
+
+        $(function () {
+            setTimeout(() => {
+                lenis = new Lenis();
+
+                const raf = (time) => {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                };
+
+                requestAnimationFrame(raf);
+            }, 700);
+            setTimeout(() => {
+                effectActive();
+
+                function effectActive(){
+                    $(".effectActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+
+                textActive();
+
+                function textActive(){
+                    $(".textActive").each(function(){
+                        let $this = $(this);
+                        let start_pos = "top bottom";
+                        let end_pos = "bottom top";
+
+                        ScrollTrigger.create({
+                            trigger: $this,
+                            start: start_pos,
+                            end: end_pos,
+                            onEnter: function(){
+                                $this.addClass("active");
+                            },onLeave: function(){
+                                $this.removeClass("active");
+                            },onEnterBack: function(){
+                                $this.addClass("active");
+                            },onLeaveBack: function(){
+                                $this.removeClass("active");
+                            }
+                        });
+                    });
+                }
+            }, 600);
+      
+            let resizeTimer;
+
+            function initRankSlider() {
+                const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+                if (!isMobile) {
+                    // 랭킹 Desktop&Tablets
+                    const $rankSliderwLg = $(".rankSlider.wLg");
+
+                    if (!$rankSliderwLg.hasClass('slick-initialized')) {
+
+                        $rankSliderwLg.on("init reInit", (event, slick) => {
+                            $(".rankSliderControl.wLg .total").text(slick.slideCount);
+                            $(".rankSliderControl.wLg .index").text((slick.currentSlide || 0) + 1);
+                        }).on("afterChange", (event, slick, currentSlide) => {
+                            $(".rankSliderControl.wLg .index").text(currentSlide + 1);
+                        });
+
+                        $rankSliderwLg.slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            prevArrow: $(".rankSliderControl.wLg .prev"),
+                            nextArrow: $(".rankSliderControl.wLg .next"),
+                            speed: 700,
+                            infinite: true
+                        });
+
+                        $rankSliderwLg.find(".ranking").each(function () {
+                            const rank = parseInt($(this).text(), 10);
+                            if (rank >= 1 && rank <= 3) {
+                                $(this).addClass("rankTop");
+                            }
+                        });
+                    }
+
+                    const $rankSliderwSm = $(".rankSlider.wSm");
+                    if ($rankSliderwSm.hasClass('slick-initialized')) {
+                        $rankSliderwSm.slick('unslick');
+                        $rankSliderwSm.off();
+                    }
+
+                } else {
+                    // 랭킹 mobile
+                    const $rankSliderwSm = $(".rankSlider.wSm");
+
+                    if (!$rankSliderwSm.hasClass('slick-initialized')) {
+
+                        $rankSliderwSm.on("init reInit", (event, slick) => {
+                            $(".rankSliderControl.wSm .total").text(slick.slideCount);
+                            $(".rankSliderControl.wSm .index").text((slick.currentSlide || 0) + 1);
+                        }).on("afterChange", (event, slick, currentSlide) => {
+                            $(".rankSliderControl.wSm .index").text(currentSlide + 1);
+                        });
+
+                        $rankSliderwSm.slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            prevArrow: $(".rankSliderControl.wSm .prev"),
+                            nextArrow: $(".rankSliderControl.wSm .next"),
+                            speed: 700,
+                            infinite: true
+                        });
+
+                        $rankSliderwSm.find(".ranking").each(function () {
+                            const rank = parseInt($(this).text(), 10);
+                            if (rank >= 1 && rank <= 3) {
+                                $(this).addClass("rankTop");
+                            }
+                        });
+                    }
+
+                    const $rankSliderwLg = $(".rankSlider.wLg");
+                    if ($rankSliderwLg.hasClass('slick-initialized')) {
+                        $rankSliderwLg.slick('unslick');
+                        $rankSliderwLg.off();
+                    }
+                }
+            }
+
+            $(window).on("load", function() {
+                initRankSlider();
+            });
+
+            $(window).on("resize", function(){
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function(){
+                    initRankSlider();
+                }, 100);
+            });
+
+            // youTube Slider
+            const $youTubeSlider = $(".youTubeSlider");
+            const $sliderFor = $(".slider-for");
+            const $sliderNav = $(".slider-nav");
+
+            function initSliders() {
+                if ($sliderFor.hasClass('slick-initialized')) {
+                    $sliderFor.slick('unslick');
+                }
+                if ($sliderNav.hasClass('slick-initialized')) {
+                    $sliderNav.slick('unslick');
+                }
+
+                $sliderFor.on("init reInit", function (event, slick) {
+                    $(".youTubeSliderControl .total").text(slick.slideCount);
+                    $(".youTubeSliderControl .index").text((slick.currentSlide || 0) + 1);
+                });
+
+                $sliderFor.on("afterChange", function (event, slick, currentSlide) {
+                    $(".youTubeSliderControl .index").text(currentSlide + 1);
+                });
+
+                $sliderFor.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    fade: true,
+                    infinite: true,
+                    //adaptiveHeight: true,
+                    prevArrow: $(".youTubeSliderControl .prev"),
+                    nextArrow: $(".youTubeSliderControl .next"),
+                    asNavFor: $sliderNav
+                });
+
+                $sliderNav.slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    vertical: true,
+                    //variableWidth: true,
+                    focusOnSelect: true,
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    asNavFor: $sliderFor,
+                    responsive: [
+                        {
+                            breakpoint: 769,
+                            settings: {
+                                vertical: false,
+                                variableWidth: true,
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
+                });
+            }
+
+            if ($youTubeSlider.length) {
+                initSliders();
+
+                let resizeTimer;
+                $(window).on("resize", function () {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function () {
+                        initSliders();
+                    }, 200);
+                });
+            }
+        });
+
+        // pregressBar
+        function animatePregressBar() {
+            $('.pregressBar').each(function () {
+                let $bar = $(this);
+                let $em = $bar.find('em');
+
+                if (isInViewport($bar) && !$bar.hasClass('done')) {
+                    $bar.addClass('done');
+                    setTimeout(function () {
+                        let targetWidth = $bar.data('width') || '100%';
+                        $em.css('width', targetWidth);
+                    }, 1000); // 1초 뒤 실행
+                }
+            });
+        }
+        function isInViewport($el) {
+            let rect = $el[0].getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            );
+        }
+        $(window).on('scroll load resize', animatePregressBar);
+
+        // 말풍선 show/hide
+        $(document).on('click', '.btnBubbleOpen, .btnBubbleClose', function (e) {
+            e.preventDefault();
+            
+            const isOpen = $(this).hasClass('btnBubbleOpen');
+            const $bubbleBox = isOpen
+                ? $(this).closest('.top, .ticket').find('.bubbleBox')
+                : $(this).closest('.bubbleBox');
+
+            $bubbleBox.toggleClass('show', isOpen);
+        });
+
+        // 모바일 상품 드래그
+        const gearContainer = document.querySelector(".itemList");
+        if (gearContainer) {
+            const gearList = document.querySelectorAll(".itemList");
+            const scrollBars = document.querySelectorAll(".itemScrollbar");
+
+            if (gearList.length > 0 && scrollBars.length > 0) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    for (let i = 0; i < gearList.length; i++) {
+                        setupDragScroll(gearList[i], scrollBars[i]);
+                    }
+                });
+
+                function setupDragScroll(container, scrollBar) {
+                    let isDragging = false;
+                    let startX = 0;
+                    let startY = 0;
+                    let currentX = 0;
+                    let translateX = 0;
+                    let maxTranslate = 0;
+                    let thumb = scrollBar.querySelector(".scrollThumb");
+
+                    function getMaxTranslate() {
+                        let parentWidth = container.parentElement.clientWidth;
+                        let contentWidth = container.scrollWidth;
+                        return contentWidth - parentWidth;
+                    }
+
+                    function updatePosition(nextX) {
+                        if (nextX > 0) {
+                            nextX = 0;
+                        }
+                        if (nextX < -maxTranslate) {
+                            nextX = -maxTranslate;
+                        }
+                        translateX = nextX;
+                        container.style.transform = "translateX(" + nextX + "px)";
+                        updateThumb();
+                    }
+
+                    function updateThumb() {
+                        let parentWidth = container.parentElement.clientWidth;
+                        let contentWidth = container.scrollWidth;
+                        let thumbWidth = (parentWidth / contentWidth) * scrollBar.clientWidth;
+                        let scrollPercent = maxTranslate === 0 ? 0 : -translateX / maxTranslate;
+                        let thumbX = (scrollBar.clientWidth - thumbWidth) * scrollPercent;
+
+                        if (thumbWidth > scrollBar.clientWidth) {
+                            thumbWidth = scrollBar.clientWidth;
+                        }
+                        thumb.style.width = thumbWidth + "px";
+                        thumb.style.transform = "translateX(" + thumbX + "px)";
+                    }
+
+                    function startDrag(e) {
+                        if (window.innerWidth > 768) {
+                            return;
+                        }
+                        isDragging = true;
+                        startX = e.type.indexOf("mouse") > -1 ? e.pageX : e.touches[0].pageX;
+                        startY = e.type.indexOf("mouse") > -1 ? e.pageY : e.touches[0].pageY;
+                        maxTranslate = getMaxTranslate();
+                        container.style.transition = "none";
+                        thumb.style.transition = "none";
+                    }
+
+                    function duringDrag(e) {
+                        if (!isDragging || window.innerWidth > 768) {
+                            return;
+                        }
+
+                        let x = e.type.indexOf("mouse") > -1 ? e.pageX : e.touches[0].pageX;
+                        let y = e.type.indexOf("mouse") > -1 ? e.pageY : e.touches[0].pageY;
+
+                        let deltaX = x - startX;
+                        let deltaY = y - startY;
+
+                        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                            if (e.cancelable) {
+                                e.preventDefault();
+                            }
+                            updatePosition(currentX + deltaX);
+                        }
+                    }
+
+                    function endDrag() {
+                        if (window.innerWidth > 768) {
+                            return;
+                        }
+                        isDragging = false;
+                        currentX = translateX;
+                        container.style.transition = "transform 0.3s ease";
+                        thumb.style.transition = "transform 0.3s ease";
+                    }
+
+                    function resetPosition() {
+                        translateX = 0;
+                        currentX = 0;
+                        container.style.transform = "translateX(0px)";
+                        updateThumb();
+                    }
+
+                    let dragTargets = [container, scrollBar];
+                    for (let j = 0; j < dragTargets.length; j++) {
+                        let target = dragTargets[j];
+                        target.addEventListener("mousedown", startDrag);
+                        target.addEventListener("touchstart", startDrag, { passive: false });
+                    }
+
+                    document.addEventListener("mousemove", duringDrag);
+                    document.addEventListener("touchmove", duringDrag, { passive: false });
+                    document.addEventListener("mouseup", endDrag);
+                    document.addEventListener("touchend", endDrag);
+
+                    window.addEventListener("resize", function () {
+                        maxTranslate = getMaxTranslate();
+                        if (window.innerWidth > 768) {
+                            resetPosition();
+                        } else {
+                            updateThumb();
+                        }
+                    });
+
+                    if (window.innerWidth <= 768) {
+                        maxTranslate = getMaxTranslate();
+                        updateThumb();
+                    }
+                }
+            }
+        }
+ 
+        // 자주 묻는 질문
+        document.querySelectorAll(".section05 .question").forEach(function (question) {
+            question.addEventListener("click", function () {
+                let clickedLi = question.closest("li");
+                document.querySelectorAll(".section05 ul li").forEach(function (li) {
+                    if (li === clickedLi) {
+                        if (li.classList.contains("active")) {
+                            li.classList.remove("active");
+                        } else {
+                            li.classList.add("active");
+                        }
+                    } else {
+                        li.classList.remove("active");
+                    }
+                });
+            });
+        });
+
+        // topbar show/hide
+        setTimeout(function(){
+            topBar();
+        }, 800);
+
+        function topBar() {
+            let topBarCheck = $(".topBar");
+            if (topBarCheck.length) {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 80) {
+                    topBarCheck.addClass("active");
+                    } else {
+                        topBarCheck.removeClass("active");
+                    }
+                });
+            }
+        }
+        // VAL랭 페스티벌 섹션으로 이동
+        function moveToOne() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section1']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+		// 스페셜 이벤트 섹션으로 이동
+		function moveToTwo() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section2']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+		// 기념품 샵 섹션으로 이동
+		function moveToThree() {
+			requestAnimationFrame(() => {
+				const targetElement = document.querySelector("[data-section='section3']");
+				if (targetElement) {
+					const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 68;
+
+					if (typeof lenis !== "undefined") {
+						lenis.scrollTo(targetElement, {
+							duration: 1.2,
+							offset: -68,
+						});
+					} else {
+						window.scrollTo({
+							top: targetTop,
+							behavior: "smooth",
+						});
+					}
+				}
+			});
+		}
+
+        if (document.querySelector(".topBar")) {
+			const moveItems = document.querySelectorAll(".move");
+	
+			if (moveItems.length >= 3) {
+				moveItems[0].addEventListener("click", moveToOne);
+				moveItems[1].addEventListener("click", moveToTwo);
+				moveItems[2].addEventListener("click", moveToThree);
+			}
+	
+			function updateActiveState(entries) {
+				let activeSection = null;
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						if (!activeSection || entry.target.getBoundingClientRect().top > activeSection.getBoundingClientRect().top) {
+							activeSection = entry.target;
+						}
+					}
+				});
+				if (activeSection) {
+					const sectionName = activeSection.getAttribute("data-section");
+					document.querySelectorAll(".move").forEach(function (item) {
+						if (item.getAttribute("data-move") === sectionName) {
+							item.classList.add("active");
+						} else {
+							item.classList.remove("active");
+						}
+					});
+				}
+			}
+	
+			const observerOptions = {
+				root: null,
+				threshold: 0.2,
+			};
+			const observer = new IntersectionObserver(updateActiveState, observerOptions);
+			document.querySelectorAll("[data-section]").forEach(function (element) {
+				observer.observe(element);
+			});
+		}
+
+        // 팝업열기
+        function modalOpen(obj) {
+            var $modal = $(obj);
+
+            $(".modalPopup.show").each(function () {
+                modalClose($(this));
+            });
+
+            $("body").addClass("scrollNo");
+            $modal.fadeIn("fast").addClass("show");
+            initSliderInModal($modal);
+
+            if (lenis) lenis.stop();
+
+            let $slider = $modal.find(".prizeSlider.slick-initialized");
+            if ($slider.length) {
+                $slider.each(function () {
+                    $(this).slick("setPosition");
+                    $(this).slick("slickGoTo", 0, true);
+                    $(this).slick("slickPlay");
+                });
+            }
+        }
+
+        // 팝업닫기
+        function modalClose(obj) {
+            var $modal = $(obj);
+
+            $("body").removeClass("scrollNo");
+            $modal.fadeOut("fast").removeClass("show");
+
+            if (lenis) lenis.start();
+
+        }
+
+        // 팝업 닫기/열기
+        function modalNext(current, next) {
+            var $currentModal = $(current);
+            var $nextModal = $(next);
+
+            modalClose($currentModal);
+            setTimeout(() => {
+                modalOpen($nextModal);
+            }, 200);
+        }
+
+        // 팝업 내 슬라이드
+        function initSliderInModal(modal) {
+            let $slider = $(modal).find(".prizeSlider");
+            if ($slider.length && !$slider.hasClass("slick-initialized")) {
+                $slider.slick({
+                    slidesToShow : 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    speed: 800,
+                    infinite: true,
+                    swipeToSlide: true,
+                    draggable: true,
+                    arrows: true,
+                    dots: true,
+                    pauseOnHover: false,
+                    responsive:[{ breakpoint: 767, settings: { arrows: false } }]
+                });
+            }
+        }
+    </script>
+    <script>
+    // 비주얼 wave script
+    (function() {
+        
+        window.CanvasSlideshow = function( options ) {
+
+            var that  =   this;
+            options                     = options || {};
+            options.stageWidth          = options.hasOwnProperty('stageWidth') ? options.stageWidth : 2560;
+            options.stageHeight         = options.hasOwnProperty('stageHeight') ? options.stageHeight : 1080;
+            //options.stageWidth = options.hasOwnProperty('stageWidth')? options.stageWidth: window.innerWidth;
+            //options.stageHeight = options.hasOwnProperty('stageHeight')? options.stageHeight: window.innerHeight;
+            options.pixiSprites         = options.hasOwnProperty('sprites') ? options.sprites : [];
+            options.centerSprites       = options.hasOwnProperty('centerSprites') ? options.centerSprites : false;
+            options.autoPlay            = options.hasOwnProperty('autoPlay') ? options.autoPlay : true;
+            options.autoPlaySpeed       = options.hasOwnProperty('autoPlaySpeed') ? options.autoPlaySpeed : [10, 3];
+            options.fullScreen          = options.hasOwnProperty('fullScreen') ? options.fullScreen : true;
+            options.displacementImage   = options.hasOwnProperty('displacementImage') ?     options.displacementImage : '';
+            options.displaceAutoFit     = options.hasOwnProperty('displaceAutoFit')  ?  options.displaceAutoFit : false; 
+            options.wacky               = options.hasOwnProperty('wacky') ? options.wacky : false;
+            options.interactive         = options.hasOwnProperty('interactive') ? options.interactive : false;
+            options.interactionEvent    = options.hasOwnProperty('interactionEvent') ? options.interactionEvent : '';
+            options.displacementCenter  = options.hasOwnProperty('displacementCenter') ? options.displacementCenter : false;
+            options.dispatchPointerOver = options.hasOwnProperty('dispatchPointerOver') ? options.dispatchPointerOver : false;
+
+            //  PIXI VARIABLES
+            /// ---------------------------    
+            var renderer            = new PIXI.autoDetectRenderer( options.stageWidth, options.stageHeight, { transparent: true });
+            var stage               = new PIXI.Container();
+            var slidesContainer     = new PIXI.Container();
+            var displacementSprite  = new PIXI.Sprite.fromImage( options.displacementImage );
+            var displacementFilter  = new PIXI.filters.DisplacementFilter( displacementSprite );
+
+            /// ---------------------------
+            //  INITIALISE PIXI
+            /// ---------------------------      
+            this.initPixi = function() {
+
+            // Add canvas to the HTML
+            //document.body.appendChild( renderer.view );
+            document.getElementById('js-canvas-wrapper').appendChild(renderer.view);
+
+            // Add child container to the main container 
+            stage.addChild( slidesContainer );
+
+            // Enable Interactions
+            stage.interactive = true; 
+
+            // Fit renderer to the screen
+            if ( options.fullScreen === true ) {
+                renderer.view.style.objectFit = 'cover';
+                renderer.view.style.width     = '100%';
+                renderer.view.style.height    = '100%';
+                renderer.view.style.top       = '50%';
+                renderer.view.style.left      = '50%';
+                renderer.view.style.webkitTransform = 'translate( -50%, -50% ) scale(1.05)';
+                renderer.view.style.transform = 'translate( -50%, -50% ) scale(1.05)';           
+            } else {
+                renderer.view.style.maxWidth  = '100%';
+                renderer.view.style.top       = '50%';
+                renderer.view.style.left      = '50%';
+                renderer.view.style.webkitTransform = 'translate( -50%, -50% )';
+                renderer.view.style.transform = 'translate( -50%, -50% )';          
+            }
+
+            displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+
+            // Set the filter to stage and set some default values for the animation
+            stage.filters = [displacementFilter];        
+
+            if ( options.autoPlay === false ) {
+                displacementFilter.scale.x = 0;
+                displacementFilter.scale.y = 0;
+            }
+
+            if ( options.wacky === true ) {
+
+                displacementSprite.anchor.set(0.5);
+                displacementSprite.x = renderer.width / 2;
+                displacementSprite.y = renderer.height / 2; 
+            }
+
+            displacementSprite.scale.x = 2;
+            displacementSprite.scale.y = 2;
+
+            // PIXI tries to fit the filter bounding box to the renderer so we optionally bypass
+            displacementFilter.autoFit = options.displaceAutoFit;
+
+            stage.addChild( displacementSprite );
+
+            };
+
+            /// ---------------------------
+            //  LOAD SLIDES TO CANVAS
+            /// ---------------------------          
+            this.loadPixiSprites = function( sprites ) {
+
+            var rSprites = options.sprites;
+
+            for ( var i = 0; i < rSprites.length; i++ ) {
+
+                var texture   = new PIXI.Texture.fromImage( sprites[i] );
+                var image     = new PIXI.Sprite( texture );
+
+                if ( options.centerSprites === true ) {
+                image.anchor.set(0.5);
+                image.x = renderer.width / 2;
+                image.y = renderer.height / 2;            
+                }
+
+                slidesContainer.addChild( image );
+
+            } 
+
+            };
+
+            /// ---------------------------
+            //  DEFAULT RENDER/ANIMATION
+            /// ---------------------------        
+            if ( options.autoPlay === true ) {
+
+            var ticker = new PIXI.ticker.Ticker();
+
+            ticker.autoStart = options.autoPlay;
+
+            ticker.add(function( delta ) {
+
+                displacementSprite.x += options.autoPlaySpeed[0] * delta;
+                displacementSprite.y += options.autoPlaySpeed[1];
+                renderer.render( stage );
+
+            });
+
+            }  else {
+
+            var render = new PIXI.ticker.Ticker();
+
+            render.autoStart = true;
+
+            render.add(function( delta ) {
+                renderer.render( stage );
+            });        
+
+            }    
+
+            /// ---------------------------
+            //  INIT FUNCTIONS
+            /// ---------------------------    
+
+            this.init = function() {
+            that.initPixi();
+            that.loadPixiSprites( options.pixiSprites );
+            };
+
+            /// ---------------------------
+            //  START 
+            /// ---------------------------           
+            this.init();
+        };
+    })();
+
+    var spriteImagesSrc = [];
+    spriteImagesSrc.push('assets/images/bg_wave.jpg');
+
+    var initCanvasSlideshow = new CanvasSlideshow({
+        sprites: spriteImagesSrc,
+        displacementImage: 'https://raw.githubusercontent.com/Pierrinho/elephant/master/pattern-clouds.jpg',
+        autoPlay: true,
+        autoPlaySpeed: [0, 6],
+        interactive: false,
+        interactionEvent: 'click', // 'click', 'hover', 'both' 
+        displaceAutoFit: false,
+        dispatchPointerOver: true // restarts pointerover event after click 
+    });
+    </script>
+</body>
+</html>
